@@ -22,15 +22,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Manually catch and send an exception
         try {
-            int x = 1 / 0;
+        //    int x = 1 / 0;
         } catch (Exception e) {
-            Sentry.captureException(e);
+      //      Sentry.captureException(e);
         }
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
 
@@ -38,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
 //            NativeSample.message();
 
 //            a hardcrash from C++ code
-//            NativeSample.crash();
+            NativeSample.crash();
 
             // Clicking this will throw an unhandled exception that Sentry will send to the Sentry server
-            throw new RuntimeException("Button press caused an exception!");
+//            throw new RuntimeException("Button press caused an exception!");
         });
     }
 
